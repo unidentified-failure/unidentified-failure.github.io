@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Creatures Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: auto;
+            padding-top: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 20px; 
+            padding: 30px; 
+            border-radius: 8px; 
+            min-height: 150px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #357ABD;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Anomaly Creatures Registration</h1>
+
+        <div class="section" id="registrationSection">
+            <h2>Register</h2>
+            <input type="text" id="regUsername" placeholder="Username" required>
+            <input type="password" id="regPassword" placeholder="Password" required>
+            <button onclick="register()">Register</button>
+        </div>
+
+        <div class="section" id="loginSection">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+
+    <script>
+      let userData = {};
+
+      function register() {
+          const username = document.getElementById('regUsername').value;
+          const password = document.getElementById('regPassword').value;
+
+          if (username && password) {
+              userData[username] = password;
+              alert('Registration successful!');
+              document.getElementById('regUsername').value = '';
+              document.getElementById('regPassword').value = '';
+          } else {
+              alert('Please fill in both fields.');
+          }
+      }
+
+      function login() {
+          const username = document.getElementById('loginUsername').value;
+          const password = document.getElementById('loginPassword').value;
+
+          if (userData[username] === password) {
+              alert('Login successful! You will be redirected to YouTube.');
+              window.location.href = "https://google.com";
+          } else {
+              alert('Incorrect username or password.');
+          }
+      }
+    </script>
+
+</body>
+</html>
