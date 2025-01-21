@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anomaly Creatures Registration</title>
+    <title>null_status: 1</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,7 +63,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Anomaly Creatures Registration</h1>
+        <h1>ダウンロードページ</h1>
 
         <div class="section" id="registrationSection">
             <h2>Register</h2>
@@ -88,11 +88,11 @@
 
           if (username && password) {
               userData[username] = password;
-              alert('Registration successful!');
+              alert('登録が成功しました!');
               document.getElementById('regUsername').value = '';
               document.getElementById('regPassword').value = '';
           } else {
-              alert('Please fill in both fields.');
+              alert('両方のフィールドに入力してください.');
           }
       }
 
@@ -101,10 +101,10 @@
           const password = document.getElementById('loginPassword').value;
 
           if (userData[username] === password) {
-              alert('Login successful! You will be redirected to YouTube.');
+              alert('ログイン成功しました！');
               window.location.href = "https://google.com";
           } else {
-              alert('Incorrect username or password.');
+              alert('ユーザー名またはパスワードが間違っています。');
           }
       }
     </script>
